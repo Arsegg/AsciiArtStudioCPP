@@ -14,12 +14,15 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    util.cpp
+    util.cpp \
+    imageviewer.cpp
 
 HEADERS  += mainwindow.h \
-    util.h
+    util.h \
+    imageviewer.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    imageviewer.ui
 
 CONFIG += link_pkgconfig
 PKGCONFIG += opencv

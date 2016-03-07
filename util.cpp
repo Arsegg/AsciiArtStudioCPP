@@ -44,12 +44,17 @@ std::string toASCII(cv::Mat image) {
 // convert image by filename to char matrix with 'width' cols and 'height' rows
 std::string toASCII(const std::string &fileName, int width = 80, int height = -1) {
     cv::Mat image = cv::imread(fileName, CV_LOAD_IMAGE_GRAYSCALE);
-    cv::namedWindow(fileName);
-    if (!image.data || width <= 0) {
+    if (!image.data) {
         return "error"; // no image data
     }
-    cv::imshow(fileName, image);
     const double scale = (double) image.rows / image.cols;
+    if (width <= 0 && height <= 0) {
+        width = 80;
+        height = width * scale;
+    }
+    if (width <= 0) {
+        width = height / scale;
+    }
     if (height <= 0) {
         height = width * scale;
     }
