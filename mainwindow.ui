@@ -19,7 +19,7 @@
      <widget class="QTextEdit" name="textEdit">
       <property name="font">
        <font>
-        <family>FreeMono</family>
+        <family>Monospace</family>
        </font>
       </property>
      </widget>
